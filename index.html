@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>this is js</h1>
+
+  <!-- <div id="container">This is container</div> -->
+
+  <!-- 
+    EVENT BUBBLING
+    when an event starts at the target element and bubbles up to its parent elements in the DOM hierarchy, clicking on child makes the parent and grandparent work
+
+    EVENT CAPTURING
+    when an event starts from the outermost parent and travels down to the target element in the DOM hierarchy
+    passing a third argument (true), which changes bubbling to capturing
+  -->
+  <div id="grandparent">
+    <div id="parent">
+      <div id="child"></div>
+    </div>
+  </div>
+
+  <div id="grandparent1">
+    <div id="parent1">
+      <div id="child1"></div>
+    </div>
+  </div>
+
+  <!-- 
+    script → Script tag should be placed in the body; it blocks HTML parsing until it loads and runs.
+    script async → HTML parsing continues while script loads, but pauses when the script is ready to run.
+    script defer → Script loads in parallel and runs only after the entire HTML is parsed.
+  -->
+  <script src="9july.js"></script>
+</body>
+</html>
