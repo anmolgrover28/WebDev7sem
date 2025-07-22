@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin - Blog Platform</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">Blog Platform</div>
+        <ul class="nav-links">
+            <li><a href="index.html" id="home-link">Home</a></li>
+            <li><a href="blogs.html" id="blogs-link">Blogs</a></li>
+            <li><a href="admin.html" id="admin-link">Admin</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h2>Upload New Blog</h2>
+        <form id="upload-form">
+            <label>Title: <input type="text" id="blog-title" required></label><br><br>
+            <label>Author: <input type="text" id="blog-author" required></label><br><br>
+            <label>Category: <input type="text" id="blog-category" required></label><br><br>
+            <label>Date: <input type="date" id="blog-date" required></label><br><br>
+            <label>Content:<br><textarea id="blog-content" rows="5" cols="40" required></textarea></label><br><br>
+            <button type="submit">Upload Blog</button>
+        </form>
+    </main>
+    <script src="script.js"></script>
+    <script>
+    document.getElementById('upload-form').onsubmit = function(e) {
+        e.preventDefault();
+        const blog = {
+            title: document.getElementById('blog-title').value,
+            author: document.getElementById('blog-author').value,
+            category: document.getElementById('blog-category').value,
+            date: document.getElementById('blog-date').value,
+            content: document.getElementById('blog-content').value
+        };
+        window.addBlog(blog);
+        alert('Blog uploaded!');
+        document.getElementById('upload-form').reset();
+        window.location.href = 'blogs.html';
+    };
+    </script>
+</body>
+</html> 
